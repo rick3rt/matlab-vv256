@@ -1,4 +1,4 @@
-%% HIGH FRAME RATE ACQUISITION
+%% LOW FRAME RATE SCANNING
 % Notice: 
 %   This file is provided by Verasonics to end users as a programming
 %   example for the Verasonics Vantage Research Ultrasound System.
@@ -64,7 +64,7 @@ clear; clc; close all;
 
 
 %% load user parameters
-P = HFR_load_parameters('acq', 0);
+P = HFR_load_parameters('scan', 0);
 
 
 %% GENERAL SETTINGS AND PARAMETERS

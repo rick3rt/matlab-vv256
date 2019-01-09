@@ -80,8 +80,17 @@ switch acqMode
     
     case 'scan'
         % LFR - scanning
-        P.numOfFrames = numOfFrames_scan; 
+        P.numFramesPerSuperFrame = 30; 
+        P.numSuperFrames = 1;
+        P.numAcqs = P.numApertures*P.numFramesPerSuperFrame;
+        P.totalFrames = P.numFramesPerSuperFrame*P.numSuperFrames;
+        
         P.simMode = simMode;
+        
+        fs = 25;
+        P.time.aperture = 200;              % usec
+        P.time.frame = 1/fs*1e6;            % usec
+        P.time.superFrame = P.time.frame;   % usec
         
     case 'acq'
         % HFR - imaging, acquiring RF data
