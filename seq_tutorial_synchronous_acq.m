@@ -24,6 +24,7 @@ Media.MP(1,:) = [0,0,100,1.0]; % [x, y, z, reflectivity]
 % Specify Trans structure array.
 Trans.name = 'L11-4v';
 Trans.frequency = 6.25; % not needed if using default center frequency
+Trans.units = 'wavelengths';
 Trans = computeTrans(Trans); % L11-4v transducer is 'known' transducer.
 
 
@@ -59,7 +60,7 @@ TGC(1).Waveform = computeTGCWaveform(TGC);
 Receive(1).Apod = ones(1,128); % if 64ch Vantage, = [ones(1,64) zeros(1,64)];
 Receive(1).startDepth = 0;
 Receive(1).endDepth = 200;      % becomes ceil(200*2*4/128)*128/8 = 208
-Receive(1).TGC = 1; % Use the first TGC waveform defined above
+Receive(1).TGC = 1; % Use the first TGC waveform defined above (Time Gain Control)
 Receive(1).mode = 0;
 Receive(1).bufnum = 1;
 Receive(1).framenum = 1;
